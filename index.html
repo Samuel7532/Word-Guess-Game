@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="UTF-8">
+<title>Word Guess
+<style>
+
+
+
+
+</style>
+</title>
+</head>
+
+
+<div id="body"></div>
+
+<body>
+  
+
+    <h2>Word Guess</h2>
+
+    <p>Your Guess:<span id="yourGuess">0</span></p>
+    <p>CPU Guess:<span id="cGuess">0</span></p>
+
+    <p>Correct Guess <span id="win">0</span></p>
+    <p>Wrong Guess <span id="loss">0</span></p>
+    <p>guesses Left: <span id="guessLeft">0</span></p>
+
+ <div id="game">
+ </div>
+
+
+
+ <script type="text/javascript">
+
+   // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+   var computerChoices = ["a", "b", "c","d","e"];
+   var guessLeft = 9;
+   var correctGuess= 0
+   var wrongGuess= 0
+
+   // This function is run whenever the user presses a key.
+   document.onkeyup = function(event) {
+
+     // Determines which key was pressed.
+     var userGuess = event.key;
+     
+
+     // Randomly chooses a choice from the options array. This is the Computer's guess.
+     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+     
+       if (userGuess == "a"){
+         if (computerGuess == "a"){
+         correctGuess += 1;
+         }else {wrongGuess += 1;guessLeft -1
+         }
+       }
+       if (userGuess == "b"){
+         if (computerGuess == "b"){
+         correctGuess += 1;
+         }else {wrongGuess += 1;guessLeft -1;
+         }
+       }
+       if (userGuess == "c"){
+         if (computerGuess == "c"){
+         correctGuess += 1;
+         }else {wrongGuess += 1;guessLeft -1
+         }
+       }
+       if (userGuess == "d"){
+         if (computerGuess == "d"){
+         correctGuess += 1;
+         }else {wrongGuess += 1;guessLeft -1
+         }
+       }
+       if (userGuess == "e"){
+         if (computerGuess == "e"){
+         correctGuess += 1;
+         }else {wrongGuess += 1;guessLeft -1
+         }
+       }
+       
+
+       var win = document.getElementById("win");
+       var loss = document.getElementById("loss");
+       var guessLeft = document.getElementById("guessLeft");
+       var yourGuess = document.getElementById("yourGuess");
+       var cGuess = document.getElementById("cGuess");
+       win.textContent = correctGuess;
+       loss.textContent = wrongGuess;
+       guessLeft.textContent = guessLeft;
+       yourGuess.textContent = userGuess;
+       cGuess.textContent = computerGuess;
+
+   };
+ </script>
+
+</body>
+
+</html>
+
